@@ -1,5 +1,6 @@
 
 const Course = require("../models/course_model");
+const mongoose = require('mongoose')
 
 
 //create a course
@@ -19,7 +20,7 @@ const createCourse = async (req, res) => {
         );
         res.status(200).json({ message: "Course Created!" })
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        res.status(404).json({ error: error.message });
     }
 }
 
@@ -33,7 +34,7 @@ const getAllCourse = async (req, res) => {
 
     } catch (error) {
 
-        res.status(400).json({ error: error.message });
+        res.status(404).json({ error: error.message });
 
     }
 }
@@ -47,11 +48,16 @@ const getCourse = async (req, res) => {
     try {
 
         const course = await Course.findById(id);
+
+        if(!course) {
+            return res.status(404).json({ error: "No record has been found" });
+        }
+
         res.status(200).json(course);
 
     } catch (error) {
 
-        res.status(400).json({ error: error.message });
+        res.status(404).json({ error: error.message });
 
     }
 }
@@ -65,11 +71,16 @@ const updateCourse = async (req, res) => {
     try {
 
         const course = await Course.findByIdAndUpdate({ _id: id }, { ...req.body });
+
+        if(!course) {
+            return res.status(404).json({ error: "No record has been found" });
+        }
+
         res.status(200).json({ message: "Course successfully updated!" });
 
     } catch (error) {
 
-        res.status(400).json({ error: error.message });
+        res.status(404).json({ error: error.message });
 
     }
 }
@@ -83,11 +94,16 @@ const deleteCourse = async (req, res) => {
     try {
 
         const course = await Course.findOneAndDelete({ _id: id });
+
+        if(!course) {
+            return res.status(404).json({ error: "No record has been found" });
+        }
+        
         res.status(200).json({ message: "The course has been successfully removed." });
 
     } catch (error) {
 
-        res.status(400).json({ error: error.message });
+        res.status(404).json({ error: error.message });
 
     }
 }

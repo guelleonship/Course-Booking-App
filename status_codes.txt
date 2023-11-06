@@ -1,0 +1,25 @@
+
+100 - Continue: The server says, "You're doing fine; keep sending your request."
+101 - Switching Protocols: The server suggests, "Let's use a different communication method."
+
+200 - OK: Everything went well; here's the information you asked for.
+201 - Created: We did what you requested, and we made a new thing.
+204 - No Content: We did it, but there's nothing to show you.
+
+301 - Moved Permanently: The thing you're looking for has moved to a new place.
+302 - Found (Temporary Redirect): The thing you're looking for is temporarily somewhere else.
+304 - Not Modified: What you have is still good; you don't need a new copy.
+
+400 - Bad Request: You didn't explain your request correctly.
+401 - Unauthorized: You need to prove who you are, and you didn't.
+403 - Forbidden: Even if you ask nicely, I won't do it.
+404 - Not Found: Sorry, but what you're looking for isn't here.
+405 - Method Not Allowed: The way you asked for something is not allowed.
+422 - Unprocessable Entity: You asked correctly, but there's something missing or wrong.
+
+500 - Internal Server Error: Something broke on our side, but we're not sure what.
+501 - Not Implemented: We can't do what you asked for; we don't have that ability.
+502 - Bad Gateway: We tried to get the information you wanted, but someone else didn't give it to us correctly.
+503 - Service Unavailable: We're taking a break or fixing things, so we can't help right now.
+504 - Gateway Timeout: We asked someone else for information, but they're taking too long to reply.
+505 - HTTP Version Not Supported: The way you're talking to us isn't the way we understand.

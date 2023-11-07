@@ -86,6 +86,7 @@ const updateCourse = async (req, res) => {
 }
 
 
+
 //delete a course 
 const deleteCourse = async (req, res) => {
 
@@ -98,15 +99,16 @@ const deleteCourse = async (req, res) => {
         if(!course) {
             return res.status(404).json({ error: "No record has been found" });
         }
-        
-        res.status(200).json({ message: "The course has been successfully removed." });
 
-    } catch (error) {
+        res.status(200).json(course);
+
+    } catch (error) { 
 
         res.status(404).json({ error: error.message });
 
     }
-}
+
+ }
 
 
 //export module

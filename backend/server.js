@@ -9,8 +9,8 @@ const app = express();
 require('dotenv').config()
 
 //route imports
-const course_router = require('./routers/course_router');
-
+const course_router = require('./routers/course_routers');
+const user_router = require('./routers/user_routers');
 
 //start node app to listen
 app.listen("3000", () => {
@@ -20,7 +20,7 @@ app.listen("3000", () => {
 });
 
 //connect to db
-mongoose.connect("mongodb+srv://test_user:test_password@cluster0.snvqjh4.mongodb.net/discuss?retryWrites=true&w=majority") //connect mongodb atlas database
+mongoose.connect(process.env.MONGO_URI) //connect mongodb atlas database
     .then(
         console.log("DB Connection successful")
     )
@@ -32,3 +32,4 @@ app.use(express.json());
 
 //Route middleware
 app.use('/api/courses', course_router);
+app.use('/api/users', user_router);

@@ -1,49 +1,31 @@
 
 
 Model.find(): This query is used to find documents that match a given set of conditions. It returns an array of all matching documents.
-
 Model.findOne(): This query finds the first document that matches the specified conditions and returns it as a single document.
-
 Model.findById(): This query is used to find a document by its unique ID. It returns a single document if a match is found.
-
 
 
 Model.create(): This query is used to create a new document in the database based on the provided data.
 
 
-
 Model.updateOne(): Updates a single document that matches a given condition.
-
 Model.updateMany(): Updates multiple documents that match a given condition.
 
 
-
 Model.deleteOne(): Deletes a single document that matches a given condition.
-
 Model.deleteMany(): Deletes multiple documents that match a given condition.
 
 
-
-
 Model.countDocuments(): Counts the number of documents that match a given condition.
-
 Model.distinct(): Returns an array of distinct values for a specified field in the documents that match a condition.
-
 Model.aggregate(): Allows for complex data aggregation operations, such as grouping and transformation, using the MongoDB aggregation framework.
 
 
 
-
 Model.find().sort(): Sorts the results in ascending or descending order based on a specified field.
-
 Model.find().limit(): Limits the number of documents returned in the result set.
-
 Model.find().skip(): Skips a specified number of documents in the result set.
-
 Model.find().select(): Specifies which fields to include or exclude from the query result.
-
 Model.find().populate(): Populates reference fields, allowing you to retrieve related documents from other collections.
-
 Model.find().lean(): Returns plain JavaScript objects instead of Mongoose documents, which can be useful for performance.
-
 Model.find().exec(): Executes the query and returns a promise, allowing you to use async/await
